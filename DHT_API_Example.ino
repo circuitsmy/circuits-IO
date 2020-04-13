@@ -64,9 +64,6 @@ void loop() {
 
   String api_key = "Put your API key";
   String device_id = "Put your device ID";
-
-  //For display data only without control.
-  //String httpData = "http://api.circuits.my/request.php?api=" + api_key + "&id=" + device_id + "&temp=" + String(t) + "&hum=" + String(h)+"&ctrl=led1,led2";
   
   String httpData = "http://api.circuits.my/request.php?api=" + api_key + "&id=" + device_id + "&temp=" + String(t) + "&hum=" + String(h)+"&ctrl=led1,led2";
 
@@ -80,7 +77,7 @@ void loop() {
     String payload = http.getString();
     
     if (payload.indexOf("led1") != -1){
-      led1_value = payload.substring(payload.indexOf("led1=")+5,payload.indexOf(",")); //capture and parse led1 value
+      led1_value = payload.substring(payload.indexOf("led1=")+5,payload.indexOf(",")); //Capture and parse led1 value
       Serial.print("led1: ");
       Serial.println(led1_value);
       //control LED on pin 4
@@ -90,7 +87,7 @@ void loop() {
     
 
     if (payload.indexOf("led2") != -1){
-      led2_value = payload.substring(payload.indexOf("led2=")+5,payload.indexOf(",0")); //capture and parse led1 value
+      led2_value = payload.substring(payload.indexOf("led2=")+5,payload.indexOf(",0")); //Capture and parse led2 value
       //control LED on pin 2
       Serial.print("led2: ");
       Serial.println(led2_value);

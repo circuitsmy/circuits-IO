@@ -65,6 +65,9 @@ void loop() {
   String api_key = "Put your API key";
   String device_id = "Put your device ID";
   
+  //For display data only without control.
+  //String httpData = "http://api.circuits.my/request.php?api=" + api_key + "&id=" + device_id + "&temp=" + String(t) + "&hum=" + String(h)+"&ctrl=led1,led2";
+  
   String httpData = "http://api.circuits.my/request.php?api=" + api_key + "&id=" + device_id + "&temp=" + String(t) + "&hum=" + String(h)+"&ctrl=led1,led2";
 
   String led1_value = ""; //payload value for led1
